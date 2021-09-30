@@ -11,6 +11,12 @@ const express = require('express')
 const server = express()
 server.use(express.json())
 
+server.get('/', (req, res) => {
+    res.json({
+        message: 'web 46 ez clap'
+    })
+})
+
 server.get('/hello', (req, res) => {
     res.send('<h1>Hello there</h1>')
 })
