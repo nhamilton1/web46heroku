@@ -1,10 +1,10 @@
 require('dotenv').config()
 
 console.log(`web46 rulez`)
-console.log(process.argv[2])
-console.log(process.argv[3])
-console.log(process.env.username)
-console.log(process.env.FOO)
+// console.log(process.argv[2])
+// console.log(process.argv[3])
+// console.log(process.env.username)
+// console.log(process.env.FOO)
 
 const express = require('express')
 
