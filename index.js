@@ -1,10 +1,10 @@
 require('dotenv').config()
 
 console.log(`web46 rulez`)
-// console.log(process.argv[2])
-// console.log(process.argv[3])
-// console.log(process.env.username)
-// console.log(process.env.FOO)
+console.log(process.argv[2])
+console.log(process.argv[3])
+console.log(process.env.username)
+console.log(process.env.FOO)
 
 const express = require('express')
 
@@ -22,6 +22,7 @@ server.get('/hello', (req, res) => {
 })
 
 const port = process.env.PORT || 3000 // this is where the port number is in heroku
+//DO NOT FORGET TO CAPITALIZE!!!!!!!!!!
 
 server.listen(port, () => {
     console.log(`listening on ${port}`)
