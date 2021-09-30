@@ -21,7 +21,7 @@ server.get('/hello', (req, res) => {
     res.send('<h1>Hello there</h1>')
 })
 
-const port = process.env.port || 3000 // this is where the port number is in heroku
+const port = process.env.PORT || 3000 // this is where the port number is in heroku
 
 server.listen(port, () => {
     console.log(`listening on ${port}`)
