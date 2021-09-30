@@ -1,25 +1,28 @@
 require('dotenv').config()
+const path = require('path')
 
-console.log(`web46 rulez`)
-console.log(process.argv[2])
-console.log(process.argv[3])
 console.log(process.env.username)
-console.log(process.env.FOO)
+
 
 const express = require('express')
 
 const server = express()
 server.use(express.json())
+// __dirname is a special global, its the aboslute path to where the file lives. 
+server.use(express.static(
+    path.join(__dirname, 'client/build')
+))
 
-server.get('/', (req, res) => {
-    res.json({
-        message: 'web 46 EZ Clap'
-    })
+server.get('/api/users', (req, res) => {
+    res.json([{ id: 1, name: 'Nick'}])
 })
 
-server.get('/hello', (req, res) => {
-    res.send('<h1>Hello there</h1>')
+server.get('*', (req, res) => {
+    res.sendFile(
+        path.join(__dirname, 'client/build', 'index.html')
+    )
 })
+
 
 const port = process.env.PORT || 3000 // this is where the port number is in heroku
 //DO NOT FORGET TO CAPITALIZE!!!!!!!!!!
