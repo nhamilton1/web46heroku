@@ -1,12 +1,13 @@
 require('dotenv').config()
 const path = require('path')
-
+const cors = require('cors')
 console.log(process.env.username)
 
 
 const express = require('express')
 
 const server = express()
+server.use(cors())
 server.use(express.json())
 // __dirname is a special global, its the aboslute path to where the file lives. 
 server.use(express.static(
