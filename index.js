@@ -13,7 +13,7 @@ server.use(express.json())
 
 server.get('/', (req, res) => {
     res.json({
-        message: 'web 46 ez clap'
+        message: 'web 46 EZ Clap'
     })
 })
 
